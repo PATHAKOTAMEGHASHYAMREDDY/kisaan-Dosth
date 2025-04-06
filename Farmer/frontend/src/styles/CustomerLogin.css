@@ -1,0 +1,235 @@
+/* src/styles/CustomerLogin.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container with Gradient Background */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6e48aa 0%, #9b59b6 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Login Card */
+.login-card {
+  background: red;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: clamp(20px, 5vw, 40px);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.login-card h2 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #34495e;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #6e48aa;
+  box-shadow: 0 0 5px rgba(110, 72, 170, 0.3);
+}
+
+/* Password Group with Eye Icon */
+.password-group {
+  position: relative;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: #6e48aa;
+}
+
+/* Buttons */
+.login-btn {
+  padding: 12px;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  background: linear-gradient(90deg, #6e48aa 0%, #9b59b6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #6e48aa;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #9b59b6;
+}
+
+/* Text and Links */
+.toggle-text {
+  margin-top: 15px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #34495e;
+}
+
+.farmer-link {
+  margin-top: 10px;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: #7f8c8d;
+}
+
+.farmer-link a {
+  color: #6e48aa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.farmer-link a:hover {
+  color: #9b59b6;
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slideInFromRight 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+  z-index: 1000;
+}
+
+.toast-success {
+  background: #27ae60;
+}
+
+.toast-error {
+  background: #e74c3c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 20px;
+    max-width: 350px;
+  }
+
+  .login-card h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .input-group label,
+  .input-group input,
+  .toggle-text,
+  .farmer-link {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  }
+
+  .login-btn {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+  }
+
+  .login-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .eye-icon {
+    font-size: 1rem;
+  }
+
+  .toast-notification {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+}

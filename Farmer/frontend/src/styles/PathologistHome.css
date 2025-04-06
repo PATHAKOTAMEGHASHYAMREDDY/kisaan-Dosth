@@ -1,0 +1,196 @@
+/* src/styles/PathologistHome.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .pathologist-home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .pathologist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .pathologist-header h2 {
+    font-size: 2rem;
+  }
+  
+  .logout-btn {
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #c0392b;
+  }
+  
+  .pathologist-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pathologist-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .complaints-list {
+    list-style: none;
+  }
+  
+  .complaint-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .complaint-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .complaint-details p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+  }
+  
+  .complaint-image {
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+  
+  .response-section {
+    margin-top: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
+  }
+  
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+    background: #ffffff;
+    color: #2c3e50;
+  }
+  
+  .submit-response-btn {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-response-btn:hover {
+    background: #219653;
+  }
+  
+  /* Toast Notifications */
+  .toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideInFromRight 0.5s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+    z-index: 1000;
+  }
+  
+  .toast-success {
+    background: #27ae60;
+  }
+  
+  .toast-error {
+    background: #e74c3c;
+  }
+  
+  /* Animations */
+  @keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .pathologist-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .pathologist-content h3 {
+      font-size: 1.2rem;
+    }
+  
+    .complaint-details p {
+      font-size: 0.9rem;
+    }
+  
+    .input-group label {
+      font-size: 0.9rem;
+    }
+  
+    .input-group textarea {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pathologist-header {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .pathologist-content {
+      padding: 15px;
+    }
+  
+    .complaint-image {
+      max-width: 100px;
+    }
+  }
